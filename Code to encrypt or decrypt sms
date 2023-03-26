@@ -1,0 +1,22 @@
+import string
+
+word = string.ascii_letters
+code = input("Enter the Code :")
+opt = input("Enter the 1 to Code && 2 for decode:")
+
+if opt == "1" or opt == "code":
+  if len(code) > 3:
+    eny = code[1:] + code[0]
+    coder = eny.replace(" ", word[:3])
+    print(coder)
+  elif len(code) <= 3:
+    eny = code[1:] + code[0]
+    print(eny)
+elif opt == "2" or opt == "decode":
+  if len(code) > 3:
+    dieny = code[-1] + code[0:]
+    coder = dieny.replace(word[:3], " ")
+    print(coder)
+  elif len(code) <= 3:
+    eny = code[-1] + code[0:-1]
+    print(eny)
