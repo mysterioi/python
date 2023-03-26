@@ -1,0 +1,14 @@
+import phonenumbers
+from phonenumbers import timezone, geocoder, carrier
+
+number=input("enter the Full phone number:")
+phone=phonenumbers.parse(number) 
+time=timezone.time_zones_for_number(phone)
+car=carrier.name_for_number(phone, "en")
+ref=geocoder.description_for_number(phone, "en")
+
+print(number, "\n" )
+print(phone, "\n" )
+print(time, "\n" )
+print(car, "\n" )
+print(ref, "\n" )
