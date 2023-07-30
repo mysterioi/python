@@ -1,0 +1,181 @@
+format = '''
+------------------------------------------
+|      Vidhya sadan Secondary school
+|       murli-12,birgunj,parsa Nepal
+|
+|  NameOfStudent:<name>        Roll:<roll>
+|  Class: <Class>             Section:<sec>
+|----------------------------------------
+|___________________________|Obtained Mark|__
+|  S.N|  Subject  |  TH | PM  | TH  | PR |
+|  1  |  Computer | 100 | 45  | <mk1>  | <mkp1> |
+|  2  |  C.Math   | 100 | 45  | <mk2>  | <mkp2> |
+|  3  |  O.Math   | 100 | 45  | <mk3>  | <mkp3> |
+|  4  |  Science  | 100 | 45  | l<mk4>  | <mkp4> |
+|  5  |  English  | 100 | 45  | <mk5>  | <mkp5> |
+|  6  |  Nepali   | 100 | 45  | <mk6>  | <mkp6> |
+|  7  |  Social   | 100 | 45  | <mk7>  | <mkp7> |
+|  8  |  Drawing  | 100 | 45  | <mk8>  | <mkp8> |
+|
+|         TOTAL   | 800 | 360 | <TM> | <TMOF>|
+|------------------------------------------- 
+|
+|   RESULT     : <result>             WRITING:<write>
+   PERCENTAGE : <per>                GRADE: <grade>
+   DIVISION   : <div>  HYGEINE: <hyg>
+
+--------------------------------------------
+
+ | GPA  | GRADE |           | GPA | GRADE |
+ | 4.0  |   A+  |           |2.33 |   C+  | 
+ | 3.67 |   A   |           | 2.0 |   C   |
+ | 3.33 |   B+  |           | 1.0 |   D   |
+ | 2.67 |   B   |           | 0.0 |   E   |
+••••••••••••••••••••••••••••••••••••••••••••
+
+| 90%-100%| EXCELLENT | | 50%-59 | GOOD TRY
+| 80%-89% | VERY GOOD | | 40%-59 | EXCEPTED
+| 70%-79  | GOOD      | | O%-39% | TRY AGAIN
+| 60%-69  | NICE
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+_______________           _______________
+ CLASS TEACHER           PRINCIPLE SIGN
+         
+                THANK YOU 
+'''
+
+# input the name class roll & sec
+name = input("Enter the Name:")
+Class = input("Enter the class:")
+Roll = input("Enter the roll:")
+sec = input("Enter the section:")
+print('''
+''')
+#input the marks of subjects
+print('''  Input The mark ''')
+mark1 = input("Enter the mark of computer:")
+mark2 = input("Enter the mark of C.math:")
+mark3 = input("Enter the mark of O.math:")
+mark4 = input("Enter the mark of science")
+mark5 = input("Enter the mark of English:")
+mark6 = input("Enter the mark of Nepali:")
+mark7 = input("Enter the mark of Social:")
+mark8 = input("Enter the mark of drawing :")
+
+print('''
+''')
+
+#input the Practical parks
+
+print('''  Input The practical  mark ''')
+markp1 = input("Enter the Practical mark of computer: ")
+markp2 = input("Enter the Practical mark of C.math: ")
+markp3 = input("Enter the Practical mark of O.math: ")
+markp4 = input("Enter the Practical mark of science: ")
+markp5 = input("Enter the Practical mark of English: ")
+markp6 = input("Enter the Practical mark of Nepali: ")
+markp7 = input("Enter the Practical mark of Social: ")
+markp8 = input("Enter the Practical mark of drawing: ")
+
+#Replace the name class roll sec
+
+a = format.replace("<name>", name)
+b = a.replace("<Class>", Class)
+c = b.replace("<roll>", Roll)
+d = c.replace("<sec>", sec)
+e = d.replace("<name>", name)
+
+#Replace the marks
+
+f = e.replace("<mk1>", mark1)
+g = f.replace("<mk2>", mark2)
+h = g.replace("<mk3>", mark3)
+i = h.replace("<mk4>", mark4)
+j = i.replace("<mk5>", mark5)
+k = j.replace("<mk6>", mark6)
+l = k.replace("<mk7>", mark7)
+m = l.replace("<mk8>", mark8)
+
+#Replace the  Practical marks
+
+n = m.replace("<mkp1>", markp1)
+o = n.replace("<mkp2>", markp2)
+p = o.replace("<mkp3>", markp3)
+q = p.replace("<mkp4>", markp4)
+r = q.replace("<mkp5>", markp5)
+s = r.replace("<mkp6>", markp6)
+t = s.replace("<mkp7>", markp7)
+u = t.replace("<mkp8>", markp8)
+
+#total Marks
+
+totalmark = str(
+  int(mark1) + int(mark2) + int(mark3) + int(mark4) + int(mark5) + int(mark6) +
+  int(mark7) + int(mark8))
+
+TotalMarkoOfPractical = str(
+  int(markp1) + int(markp2) + int(markp3) + int(markp4) + int(markp5) +
+  int(markp6) + int(markp7) + int(markp8))
+
+v = u.replace("<TM>", totalmark)
+w = v.replace("<TMOF>", TotalMarkoOfPractical)
+
+print('''
+''')
+
+#input the grade of hygine handwriting
+
+print(''' the grade of hygine && writing''')
+
+# percentage of result
+handwriting = input("Enter the grade of handwriting:")
+
+percentage = int(totalmark) / 800 * 100
+strpercentage = str(percentage)
+
+#result´s grade
+
+if percentage <= 100 and percentage > 90:
+  x = w.replace("<grade>", "A+")
+elif percentage <= 89 and percentage > 70:
+  x = w.replace("<grade>", "A")
+elif percentage <= 79 and percentage > 60:
+  x = w.replace("<grade>", "B+")
+elif percentage <= 69 and percentage > 50:
+  x = w.replace("<grade>", "B")
+elif percentage <= 59 and percentage > 40:
+  x = w.replace("<grade>", "C+")
+elif percentage <= 49 and percentage > 30:
+  x = w.replace("<grade>", "C")
+elif percentage <= 39 and percentage > 20:
+  x = w.replace("<grade>", "D")
+else:
+  x = w.replace("<grade>", "E")
+
+  #division of the result
+
+if percentage <= 100 and percentage > 90:
+  zb = x.replace("<div>", "Dictiction")
+elif percentage <= 89 and percentage > 70:
+  zb = x.replace("<div>", "first division")
+elif percentage <= 79 and percentage > 60:
+  zb = x.replace("<div>", "Second division")
+else:
+  zb = x.replace("<div>", "Third Division")
+
+  #resut = pass or fail
+
+aa = zb.replace("<per>", strpercentage)
+zd = aa.replace("<write>", handwriting)
+
+hygine = input("Enter the grade of hygine:")
+
+if percentage >= 45:
+  aaa = zd.replace("<result>", "Pass")
+else:
+  aaa = zd.replace("<result>", "Fail")
+
+aab=aaa.replace("<hyg>",hygine)
+
+print(aab)
