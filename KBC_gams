@@ -1,0 +1,65 @@
+#question Section Start
+questions = [
+  [
+    "1:The International Literacy Day is observed on", "Sept 8", "Nov 28",
+    "May 2", "Sept 22"
+  ],
+  [
+    "2:The language of Lakshadweep. a Union Territory of India, is", "Tamil",
+    "Hindi", "Malayalam", "Telugu"
+  ],
+  [
+    "3:Bahubali festival is related to:", "Islam", "Hinduism", "Buddhism",
+    "Jainism"
+  ],
+  [
+    "4:Which day is observed as the World Standards Day?", "June 26", "Oct 14",
+    "Nov 15", "Dec 2"
+  ],
+  [
+    "5:In which group of places the Kumbha Mela is held every twelve years?",
+    "Ujjain. Purl; Prayag. Haridwar", "Prayag. Haridwar, Ujjain,. Nasik",
+    "Rameshwaram. Purl, Badrinath.Dwarika",
+    "Chittakoot, Ujjain, Prayag,'Haridwar"
+  ],
+  [
+    "6:Which of the following was the theme of the World Red Cross and Red Crescent Day?",
+    "Dignity for all - focus on women", "Dignity for all - focus on Children",
+    "Focus on health for all", "D.Nourishment for all-focus on children"
+  ], 
+  [
+    "7:September 27 is celebrated every year as,", "Teachers' Day", "National Integration Day", "World Tourism Day", "International Literacy Day"
+  ]
+]
+#question Section End
+
+# Answer Section Start 
+answer=["A", "C", "D", "B", "B", "B", "C"]
+answern=["1", "3", "4", "2", "2", "2", "3"]
+answerina=["a", "c", "d", "b", "b", "b", "c"]
+# Answer Section End 
+# prize of Candidate Answer 
+prize = [1000, 2000, 6000, 12000, 25000, 46000, 77000, 108000, 150000, 180000]
+
+# Now The main program is written 
+for i in range(0, len(questions)):
+  question = questions
+  print(f"\t\t Question for Rs {prize[i]}")
+  print(f"{question[i][0]}")
+  print(f"A. {question[i][1]}")
+  print(f"B. {question[i][2]}")
+  print(f"C. {question[i][3]}")
+  print(f"D. {question[i][4]}")
+  player = input("Enter the answer:")
+  if player == answer[i] or player == answern[i] or player==answerina[i]:
+    print(f"Congratulations! you Won {prize[i]}\n")
+  else:
+    if i>=4:
+       money=12000
+    elif i>=7:
+       money=180000
+    else:
+       money=0
+    print(f"You Lose! Rs {prize[i]} Better Luck next time\n")
+    print(f"your money is {money}")
+    break
